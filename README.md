@@ -34,3 +34,36 @@ pip install -r requirements.txt
 # migrate DB and start server
 python manage.py migrate
 python manage.py runserver
+
+```
+## API Endpoints
+
+GET /health
+
+Returns:
+{ "status": "ok" }
+
+
+POST /api/owners/
+
+Request Body:
+
+{ "name": string, "email": string }
+Response:
+
+{ "id": int, "name": string, "email": string }
+
+POST /api/cars/
+
+Request Body:
+
+{
+  "vin": string,
+  "make": string,
+  "model": string,
+  "year_of_manufacture": int,
+  "ownerId": int
+}
+Response:
+
+{ "id": int, "vin": string, "make": string, "model": string, "year_of_manufacture": int, "ownerId": int }
