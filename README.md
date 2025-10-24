@@ -50,10 +50,11 @@ POST /api/owners/
 Request Body:
 ```bash
 { "name": string, "email": string }
-Response:
 ```
+Response:
+```bash
 { "id": int, "name": string, "email": string }
-
+```
 POST /api/cars/
 
 Request Body:
@@ -144,7 +145,7 @@ Policy {id} for car {carId} expired on {endDate}
 ```
 
 ## Project Structure
-
+```bash
 car_insurance/     # Django config
 owners/            # owner API
 cars/              # vehicle API
@@ -153,12 +154,13 @@ claims/            # insurance claims
 history/           # full car history
 core/              # scheduler setup
 tests/             # pytest tests
-
+```
 ## Validations & Rules
-
+```bash
 endDate >= startDate
 Dates must be in ISO format (1900–2100)
 Amounts must be positive and reasonable
 Foreign keys enforced: owner, car
 Policies cannot overlap
 Each policy is logged only once after expiry
+```
